@@ -1,0 +1,50 @@
+{
+  "name": "billing",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "webpack-dev-server --inline --hot",
+    "package": "webpack -p --progress --config ./webpack.config.package.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-react-html-attrs": "^2.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.16",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.3",
+    "style-loader": "^0.16.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "axios": "^0.16.1",
+    "bootstrap": "^3.3.7",
+    "bootswatch": "^3.3.7",
+    "clone": "^2.1.1",
+    "jquery": "^3.2.1",
+    "numeral": "^2.0.6",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-loader-advanced": "^1.6.0",
+    "react-redux": "^5.0.4",
+    "react-router-dom": "^4.1.1",
+    "react-router-redux": "^4.0.8",
+    "react-select": "^1.0.0-rc.3",
+    "redux": "^3.6.0",
+    "redux-logger": "^3.0.1",
+    "redux-promise-middleware": "^4.2.0",
+    "redux-thunk": "^2.2.0"
+  }
+}
