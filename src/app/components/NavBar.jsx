@@ -14,7 +14,7 @@ const Nav = ({ expanded, onToggleExpand }) => {
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <Link to="/" class="navbar-brand">Next Page</Link>
+                    <Link to="/" class="navbar-brand">Comic</Link>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
