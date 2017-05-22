@@ -8,7 +8,7 @@ import { onSettingsChange } from "../actions/imagesActions";
 const Home = ({ settings, index, onChange, onNext }) => {
     return (
         <div>
-            <h1>Commic</h1>
+            <h1>Comic</h1>
 
             <form>
                 <div class="form-group">

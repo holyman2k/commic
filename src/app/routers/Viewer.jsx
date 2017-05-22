@@ -36,7 +36,7 @@ class Viewer extends React.Component {
             const prefetchCount = 5;
             const fetchList = list.slice(index, index + prefetchCount);
             startPrefetch(fetchList);
-            $('html, body').stop().animate({ scrollTop: 52}, 300, 'swing');
+            $('html, body').stop().animate({ scrollTop: 52 }, 300, 'swing');
         }
     }
 
@@ -48,7 +48,9 @@ class Viewer extends React.Component {
         }
         return (
             <div>
-                <img class={imgClasses.join(" ")} src={settings.list[index]} />
+                <Link to={`/viewer/${Math.min(index + 1, settings.total)}`}>
+                    <img class={imgClasses.join(" ")} src={settings.list[index]} />
+                </Link>
                 <nav aria-label="pager">
                     <ul class="pager">
                         <li><Link to={`/viewer/${Math.max(index - 1, 0)}`}>Previous</Link></li>
