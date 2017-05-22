@@ -5,10 +5,10 @@ import numeral from "numeral";
 import clone from "clone";
 import { onSettingsChange } from "../actions/imagesActions";
 
-const Home = ({ settings, onChange, onNext }) => {
+const Home = ({ settings, index, onChange, onNext }) => {
     return (
         <div>
-            <h1>Image Viewer</h1>
+            <h1>Next Page</h1>
 
             <form>
                 <div class="form-group">
@@ -32,7 +32,7 @@ const Home = ({ settings, onChange, onNext }) => {
                         value={settings.list.join("\n")} onChange={e => onChange(e, 'list', settings)} />
                 </div>
                 <div class="pull-right">
-                    <button type="submit" class="btn btn-default" onClick={e => onNext(e)}>Submit</button>
+                    <button type="submit" class="btn btn-primary" onClick={e => onNext(e, index)}>Next</button>
                 </div>
             </form>
         </div>
@@ -43,6 +43,7 @@ export default withRouter(connect(
     (store, props) => {
         return {
             settings: store.images.settings,
+            index: store.images.index,
         }
     },
     (dispatch, props) => {
@@ -63,11 +64,10 @@ export default withRouter(connect(
                 }
                 dispatch(onSettingsChange(newSettings));
             },
-            onNext: (e) => {
+            onNext: (e, index) => {
                 e.preventDefault();
                 e.stopPropagation();
-
-                props.history.push("/viewer");
+                props.history.push(`/viewer/${index || 0}`);
             }
         }
     }

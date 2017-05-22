@@ -1,14 +1,14 @@
-import React from "react"
-import { connect } from "react-redux"
-import { withRouter } from 'react-router-dom'
+import React from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import Loader from "react-loader-advanced";
-import NavBar from "../components/NavBar.jsx"
-import Spinner from "../components/Spinner.jsx"
+import NavBar from "../components/NavBar.jsx";
+import Spinner from "../components/Spinner.jsx";
 
-const Layout = ({ children, isBusy=false }) => {
+const Layout = ({ children }) => {
 
     return (
-        <Loader show={isBusy} message={<Spinner />}>
+        <Loader show={false} message={<Spinner />}>
             <NavBar />
             <div class="container">
                 {children}
@@ -19,8 +19,6 @@ const Layout = ({ children, isBusy=false }) => {
 
 export default withRouter(connect(
     (store) => {
-        return {
-            isBusy: false,
-        }
-    }
+        return {}
+    },
 )(Layout));
