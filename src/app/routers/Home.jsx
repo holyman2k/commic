@@ -95,9 +95,8 @@ export default withRouter(connect(
                 const text = clone(settings);
                 delete text.list;
                 const compressed = LZString.compressToEncodedURIComponent(JSON.stringify(text));
-                const url = `/${compressed}`;
-                copy(`${window.location}${url}`);
-                props.history.push(url);
+                copy(`${window.location}${compressed}`);
+                props.history.push(`/${compressed}`);
             }
         }
     }
