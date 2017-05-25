@@ -18,6 +18,7 @@ const App = () => {
                     <Switch>
                         <Route path="/viewer/:index" component={Viewer} />
                         <Route path="/viewer" component={Viewer} />
+                        <Route path="/:query" component={Home} />
                         <Route path="/" component={Home} />
                     </Switch>
                 </Layout>
