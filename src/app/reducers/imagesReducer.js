@@ -3,6 +3,8 @@ import clone from "clone";
 // const localStorageSettings = window.localStorage.settings ? JSON.parse(window.localStorage.settings) : null;
 // const localStorageIndex = window.localStorage.index ? parseInt(window.localStorage.index) : 0;
 
+const localStorageSettings = null;
+const localStorageIndex = 0;
 const initialState = {
     settings: localStorageSettings || {
         template: "",
