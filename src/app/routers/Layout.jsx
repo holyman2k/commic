@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
     return (
         <Loader show={false} message={<Spinner />}>
             <NavBar />
-            <div class="container">
+            <div class="main container">
                 {children}
             </div>
         </Loader>

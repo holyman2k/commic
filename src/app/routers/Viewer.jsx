@@ -42,7 +42,7 @@ class Viewer extends React.Component {
 
     render() {
         const { settings, index, expanded } = this.props;
-        const imgClasses = ["img-responsive", "center-block"];
+        const imgClasses = ["img-responsive", "center-block", "image"];
         if (expanded) {
             imgClasses.push("width-full");
         }
