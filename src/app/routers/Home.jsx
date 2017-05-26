@@ -52,8 +52,6 @@ export default withRouter(connect(
         }
     },
     (dispatch, props) => {
-
-
         const createList = (template, length, padding) => {
             let list = [];
             const format = (new Array(parseInt(padding))).fill(0).join("");
