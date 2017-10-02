@@ -56,7 +56,7 @@ export default withRouter(connect(
             let list = [];
             const format = (new Array(parseInt(padding))).fill(0).join("");
             for (let i = 0; i < parseInt(length); i++) {
-                const url = template.replace("(*)", numeral(i).format(format));
+                const url = template.replace("(*)", numeral(i + 1).format(format));
                 list.push(url);
             }
             return list;
