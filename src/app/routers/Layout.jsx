@@ -1,19 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import Loader from "react-loader-advanced";
 import NavBar from "../components/NavBar.jsx";
-import Spinner from "../components/Spinner.jsx";
+import Loader from "../components/Loader.jsx";
 
 const Layout = ({ children }) => {
 
     return (
-        <Loader show={false} message={<Spinner />}>
+        <div>
             <NavBar />
             <div class="main container">
                 {children}
             </div>
-        </Loader>
+            <Loader />
+        </div>
     )
 }
 
