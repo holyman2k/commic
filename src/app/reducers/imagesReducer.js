@@ -1,18 +1,13 @@
 import clone from "clone";
 
-// const localStorageSettings = window.localStorage.settings ? JSON.parse(window.localStorage.settings) : null;
-// const localStorageIndex = window.localStorage.index ? parseInt(window.localStorage.index) : 0;
-
-const localStorageSettings = null;
-const localStorageIndex = 0;
 const initialState = {
-    settings: localStorageSettings || {
+    settings: {
         template: "",
         length: 2,
         total: 1,
         list: [],
     },
-    index: localStorageIndex || 0
+    index: 0,
 };
 
 export default function (state = initialState, action) {
@@ -22,8 +17,12 @@ export default function (state = initialState, action) {
             const newState = clone(state);
             newState.settings = payload;
             newState.index = 0;
-            // window.localStorage.settings = JSON.stringify(payload);
-            // window.localStorage.index = 0;
+            return newState;
+        }
+        case "SETTINGS_LIST_CHANGED": {
+            const newState = clone(state);
+            newState.settings.list = payload;
+            newState.index = 0;
             return newState;
         }
     }
