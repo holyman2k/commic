@@ -56,20 +56,21 @@ class Viewer extends React.Component {
 
     render() {
         const { settings, index, expanded } = this.props;
-        const url = settings.list[index] || "";
+        const list = settings.list || [];
+        const url = list[index] || "";
         const imgClasses = ["img-responsive", "center-block", "image"];
         if (expanded) {
             imgClasses.push("width-full");
         }
         return (
             <div>
-                <Link to={`/viewer/${Math.min(index + 1, settings.total + 1)}`}>
+                <Link to={`/viewer/${Math.min(index + 1, list.length)}`}>
                     <img class={imgClasses.join(" ")} src={url} onLoad={() => this.onLoaded()} onError={() => this.onLoaded()} />
                 </Link>
                 <nav aria-label="pager">
                     <ul class="pager">
                         <li><Link to={`/viewer/${Math.max(index - 1, 0)}`}>Previous</Link></li>
-                        <li><Link to={`/viewer/${Math.min(index + 1, settings.total + 1)}`}>Next</Link></li>
+                        <li><Link to={`/viewer/${Math.min(index + 1, list.length)}`}>Next</Link></li>
                     </ul>
                 </nav>
             </div>

@@ -77,7 +77,7 @@ export default withRouter(connect(
                     newSettings[field] = e.target.value;
                     newSettings.list = createList(newSettings.template, newSettings.total, newSettings.length);
                 } else {
-                    newSettings.list = e.target.value.trim().split("\n");
+                    newSettings.list = e.target.value.trim().split("\n").map(_ => _.replace(/[\",]/g, "").trim())
                 }
                 dispatch(onSettingsChange(newSettings));
             },
@@ -89,7 +89,6 @@ export default withRouter(connect(
             onCreatePermLink: (e, settings) => {
                 e.preventDefault();
                 e.stopPropagation();
-                console.log(settings);
                 const text = clone(settings);
                 delete text.list;
                 const compressed = LZString.compressToEncodedURIComponent(JSON.stringify(text));
