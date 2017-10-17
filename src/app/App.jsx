@@ -12,7 +12,7 @@ const history = createHashHistory();
 const App = () => {
     return (
         <Provider store={store}>
-            <HashRouter history={history}>
+            <HashRouter>
                 <Layout>
                     <Switch>
                         <Route path="/viewer/:index" component={Viewer} />
