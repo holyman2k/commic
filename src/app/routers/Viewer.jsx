@@ -16,11 +16,11 @@ class Viewer extends React.Component {
     }
 
     componentWillMount() {
-        const { index, history, settings, dispatch } = this.props;
+        const { dispatch } = this.props;
         dispatch(busy(true));
         this.prefetch();
-
         $(window).on('keydown', (event) => {
+            const { index, history, settings, dispatch } = this.props;
             if (event.keyCode == 37 && index > 0) {  // left
                 history.push(`/viewer/${index - 1}`);
             } else if (event.keyCode == 39 && index <= settings.list.length) {   // right
@@ -83,7 +83,7 @@ export default withRouter(connect(
         const index = props.match.params.index != null ? parseInt(props.match.params.index) : 0;
         return {
             settings: store.images.settings,
-            index: index,
+            index,
             expanded: store.settings.expand,
         }
     },
