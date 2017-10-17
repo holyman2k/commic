@@ -64,13 +64,13 @@ class Viewer extends React.Component {
         }
         return (
             <div>
-                <Link to={`/viewer/${Math.min(index + 1, list.length)}`}>
+                <Link to={`/viewer/${Math.min(index + 1, list.length - 1)}`}>
                     <img class={imgClasses.join(" ")} src={url} onLoad={() => this.onLoaded()} onError={() => this.onLoaded()} />
                 </Link>
                 <nav aria-label="pager">
                     <ul class="pager">
                         <li><Link to={`/viewer/${Math.max(index - 1, 0)}`}>Previous</Link></li>
-                        <li><Link to={`/viewer/${Math.min(index + 1, list.length)}`}>Next</Link></li>
+                        <li><Link to={`/viewer/${Math.min(index + 1, list.length - 1)}`}>Next</Link></li>
                     </ul>
                 </nav>
             </div>

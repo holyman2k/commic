@@ -38,11 +38,11 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ExtractTextPlugin.extract({ loader: 'css-loader', publicPath: "../" }),
+                use: ExtractTextPlugin.extract({ use: 'css-loader', publicPath: "../" }),
             },
             {
                 test: /\.less$/,
-                use: ExtractTextPlugin.extract({ loader: ['css-loader', 'less-loader'], publicPath: "../" }),
+                use: ExtractTextPlugin.extract({ use: ['css-loader', 'less-loader'], publicPath: "../" }),
             },
         ]
     },
